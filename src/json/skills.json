@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "icon": "FaHtml5",
+      "title": "HTML",
+      "description": "Proficient in creating semantic and accessible web pages."
+    },
+    {
+      "id": 2,
+      "icon": "FaCss3",
+      "title": "CSS",
+      "description": "Skilled in crafting visually appealing and responsive designs."
+    },
+    {
+      "id": 3,
+      "icon": "FaJs",
+      "title": "JavaScript",
+      "description": "Experienced in building dynamic and interactive web applications."
+    },
+    {
+      "id": 4,
+      "icon": "FaReact",
+      "title": "React",
+      "description": "Adept at developing modern, component-based user interfaces."
+    },
+    {
+      "id": 5,
+      "icon": "FaNodeJs",
+      "title": "Node.js",
+      "description": "Knowledgeable in building server-side applications and APIs."
+    },
+    {
+      "id": 6,
+      "icon": "FaGit",
+      "title": "Git",
+      "description": "Proficient in version control and collaborative development workflows."
+    }
+  ]
