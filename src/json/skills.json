@@ -19,18 +19,36 @@
     },
     {
       "id": 4,
+      "icon": "FaPhp",
+      "title": "PHP",
+      "description": "Familiar with server-side scripting and database integration."
+    },
+    {
+      "id": 5,
+      "icon": "FaLaravel",
+      "title": "Laravel",
+      "description": "Proficient in developing secure and scalable web applications."
+    },
+    {
+      "id": 6,
       "icon": "FaReact",
       "title": "React",
       "description": "Adept at developing modern, component-based user interfaces."
     },
     {
-      "id": 5,
+      "id": 7,
+      "icon": "FaNextJs",
+      "title": "Next.js",
+      "description": "Skilled in building server-rendered React applications with ease."
+    },
+    {
+      "id": 8,
       "icon": "FaNodeJs",
       "title": "Node.js",
       "description": "Knowledgeable in building server-side applications and APIs."
     },
     {
-      "id": 6,
+      "id": 9,
       "icon": "FaGit",
       "title": "Git",
       "description": "Proficient in version control and collaborative development workflows."

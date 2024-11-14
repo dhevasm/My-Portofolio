@@ -5,21 +5,18 @@ import projects from "../json/projects.json";
 import Particle from "../particles/Particle";
 
 const ProjectList = () => {
-  // Fade in animation for the section title
   const fadeIn = useSpring({
     from: { opacity: 0, transform: 'translateY(20px)' },
     to: { opacity: 1, transform: 'translateY(0)' },
     config: { tension: 300, friction: 20 }
   });
 
-  // Trail animation for project cards
   const trail = useTrail(projects.length, {
     from: { opacity: 0, transform: 'scale(0.9)' },
     to: { opacity: 1, transform: 'scale(1)' },
     config: { mass: 1, tension: 280, friction: 20 }
   });
 
-  // Hover animation for project cards
   const [props, api] = useSpring(() => ({
     scale: 1,
     config: { tension: 300, friction: 10 }

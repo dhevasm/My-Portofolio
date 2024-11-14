@@ -1,9 +1,12 @@
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { useSpring, animated, config } from '@react-spring/web';
 import Particle from "../particles/Particle";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ContactForm = () => {
-  // Animasi untuk judul
+  const [isPressed, setIsPressed] = useState(false);
+
   const titleSpring = useSpring({
     from: { opacity: 0, transform: 'translateY(-20px)' },
     to: { opacity: 1, transform: 'translateY(0)' },
@@ -11,7 +14,6 @@ const ContactForm = () => {
     delay: 200,
   });
 
-  // Animasi untuk card contact info
   const contactInfoSpring = useSpring({
     from: { opacity: 0, transform: 'translateX(-50px)' },
     to: { opacity: 1, transform: 'translateX(0)' },
@@ -19,7 +21,6 @@ const ContactForm = () => {
     delay: 400,
   });
 
-  // Animasi untuk card form
   const formSpring = useSpring({
     from: { opacity: 0, transform: 'translateX(50px)' },
     to: { opacity: 1, transform: 'translateX(0)' },
@@ -27,7 +28,6 @@ const ContactForm = () => {
     delay: 400,
   });
 
-  // Animasi untuk contact items
   const contactItemsSpring = useSpring({
     from: { opacity: 0, transform: 'translateY(20px)' },
     to: { opacity: 1, transform: 'translateY(0)' },
@@ -35,14 +35,12 @@ const ContactForm = () => {
     delay: 600,
   });
 
-  // Hover animation untuk button
   const [buttonProps, buttonApi] = useSpring(() => ({
     scale: 1,
     shadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
     config: { mass: 1, tension: 300, friction: 20 },
   }));
 
-  // Animasi untuk input fields
   const inputSpring = useSpring({
     from: { width: '0%' },
     to: { width: '100%' },
@@ -79,7 +77,7 @@ const ContactForm = () => {
                 })}
               >
                 <FaEnvelope size={24} className="text-gray-400" />
-                <span>ardiansyahdheva@example.com</span>
+                <Link to={'mailto:dhevasmpkl123@gmail.com'} target="_blank">dhevapkl123@gmail.com</Link>
               </animated.div>
               <animated.div 
                 className="flex items-center space-x-4 mb-4 hover:transform hover:translate-x-2 transition-transform duration-300"
@@ -90,7 +88,7 @@ const ContactForm = () => {
                 })}
               >
                 <FaPhoneAlt size={24} className="text-gray-400" />
-                <span>+6288994107529</span>
+                <Link to={'https://wa.me/6288994107529'} target="_blank">+6288994107529</Link>
               </animated.div>
               <animated.div 
                 className="flex items-center space-x-4 hover:transform hover:translate-x-2 transition-transform duration-300"
@@ -134,19 +132,43 @@ const ContactForm = () => {
                 ></textarea>
               </animated.div>
               <animated.button
-                type="submit"
-                style={buttonProps}
-                onMouseEnter={() => buttonApi.start({ 
-                  scale: 1.05,
-                  shadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2)',
-                })}
-                onMouseLeave={() => buttonApi.start({ 
-                  scale: 1,
-                  shadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-                })}
-                className="bg-gradient-to-r from-gray-800 to-black hover:from-gray-900 hover:to-gray-800 text-white px-10 py-3 rounded-md font-medium transition-colors duration-300"
-              >
+               className={`
+                hover:cursor-pointer
+                relative overflow-hidden
+                px-8 py-4 rounded-lg
+                bg-gradient-to-r from-purple-600 to-indigo-600
+                hover:from-purple-500 hover:to-indigo-500
+                text-white font-medium
+                transform transition-all duration-300
+                hover:scale-105 active:scale-95
+                shadow-[0_0_20px_rgba(147,51,234,0.3)]
+                hover:shadow-[0_0_25px_rgba(147,51,234,0.5)]
+                ${isPressed ? 'scale-95' : ''}
+                group
+              `}
+              onMouseDown={() => setIsPressed(true)}
+              onMouseUp={() => setIsPressed(false)}
+              onMouseLeave={() => setIsPressed(false)}
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2">
                 Send Message
+                <svg 
+                  className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </span>
+              
+              {/* Ripple effect overlay */}
+              <div className="absolute inset-0 bg-white/20 transform scale-0 transition-transform duration-500 rounded-lg group-hover:scale-100" />
               </animated.button>
             </form>
           </animated.div>

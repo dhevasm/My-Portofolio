@@ -1,18 +1,17 @@
 import React from 'react';
 import { useSpring, animated, useTrail, config } from '@react-spring/web';
 import skills from "../json/skills.json";
-import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs, FaGit } from "react-icons/fa";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs, FaGit, FaPhp, FaLaravel } from "react-icons/fa";
+import { RiNextjsLine } from 'react-icons/ri';
 import Particle from "../particles/Particle";
 
 const SkillList = () => {
-  // Fade in animation for the section title
   const titleAnimation = useSpring({
     from: { opacity: 0, transform: 'translateY(20px)' },
     to: { opacity: 1, transform: 'translateY(0)' },
     config: config.molasses
   });
 
-  // Trail animation for skill cards
   const trail = useTrail(skills.length, {
     from: { 
       opacity: 0, 
@@ -27,7 +26,6 @@ const SkillList = () => {
     config: { tension: 280, friction: 20 }
   });
 
-  // Icon spin animation on hover
   const [iconProps, iconApi] = useSpring(() => ({
     transform: 'rotate(0deg)',
     config: { tension: 300, friction: 10 }
@@ -38,8 +36,11 @@ const SkillList = () => {
       FaHtml5: <FaHtml5 size={size} />,
       FaCss3: <FaCss3 size={size} />,
       FaJs: <FaJs size={size} />,
+      FaPhp: <FaPhp size={size} />,
+      FaLaravel: <FaLaravel size={size} />,
       FaReact: <FaReact size={size} />,
       FaNodeJs: <FaNodeJs size={size} />,
+      FaNextJs: <RiNextjsLine size={size} />,
       FaGit: <FaGit size={size} />
     };
     return icons[iconName];

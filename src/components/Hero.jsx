@@ -3,8 +3,12 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { TypeAnimation } from 'react-type-animation';
 import { useSpring, animated } from '@react-spring/web';
 import Particle from "../particles/Particle";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
+  const [isPressed, setIsPressed] = useState(false);
+
   const fadeIn = useSpring({
     from: { opacity: 0, transform: 'translateY(20px)' },
     to: { opacity: 1, transform: 'translateY(0)' },
@@ -62,13 +66,43 @@ const Hero = () => {
           </div>
           <div className="flex justify-center md:justify-start space-x-8">
             <animated.a
-              href="#"
-              style={buttonProps}
-              onMouseEnter={() => buttonApi.start({ scale: 1.05 })}
-              onMouseLeave={() => buttonApi.start({ scale: 1 })}
-              className="bg-gradient-to-r from-gray-800 to-black hover:from-gray-900 hover:to-gray-800 text-white px-10 py-5 rounded-md font-medium shadow-lg transition-colors duration-300"
-            >
+             className={`
+              hover:cursor-pointer
+              relative overflow-hidden
+              px-8 py-4 rounded-lg
+              bg-gradient-to-r from-purple-600 to-indigo-600
+              hover:from-purple-500 hover:to-indigo-500
+              text-white font-medium
+              transform transition-all duration-300
+              hover:scale-105 active:scale-95
+              shadow-[0_0_20px_rgba(147,51,234,0.3)]
+              hover:shadow-[0_0_25px_rgba(147,51,234,0.5)]
+              ${isPressed ? 'scale-95' : ''}
+              group
+            `}
+            onMouseDown={() => setIsPressed(true)}
+            onMouseUp={() => setIsPressed(false)}
+            onMouseLeave={() => setIsPressed(false)}
+          >
+            <Link to={"/projects"} className="relative z-10 flex items-center justify-center gap-2">
               View Portfolio
+              <svg 
+                className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </Link>
+            
+            {/* Ripple effect overlay */}
+            <div className="absolute inset-0 bg-white/20 transform scale-0 transition-transform duration-500 rounded-lg group-hover:scale-100" />
             </animated.a>
             <animated.a
               href="https://www.linkedin.com/in/ardiansyah-dheva-3139a82b9/"

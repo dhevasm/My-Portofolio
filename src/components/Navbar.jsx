@@ -14,7 +14,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm shadow-lg z-50">
+    <nav className="fixed top-0 w-full bg-black/30 backdrop-blur-md shadow-lg z-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
@@ -53,7 +53,7 @@ const Navbar = () => {
             isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-black">
+          <div className="px-2 pt-2 pb-3 space-y-1">
             {menuItems.map((item, index) => (
               <Link
                 key={item.title}
