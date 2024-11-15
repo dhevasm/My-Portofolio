@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
 import { useSpring, animated, config } from '@react-spring/web';
 import Particle from "../particles/Particle";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Resume = () => {
 
   const [isPressed, setIsPressed] = useState(false);
+  const Navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    Navigate('/contact');
+  }
 
   const imageSpring = useSpring({
     from: { opacity: 0, transform: 'scale(0.8) rotate(-5deg)' },
@@ -107,8 +112,9 @@ const Resume = () => {
               onMouseDown={() => setIsPressed(true)}
               onMouseUp={() => setIsPressed(false)}
               onMouseLeave={() => setIsPressed(false)}
+              onClick={handleButtonClick}
             >
-              <Link to={'/contact'} className="relative z-10 flex items-center justify-center gap-2">
+              <soan className="relative z-10 flex items-center justify-center gap-2">
                 Get In Touch
                 <svg 
                   className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1" 
@@ -123,7 +129,7 @@ const Resume = () => {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </Link>
+              </soan>
               
               <div className="absolute inset-0 bg-white/20 transform scale-0 transition-transform duration-500 rounded-lg group-hover:scale-100" />
             </animated.div>

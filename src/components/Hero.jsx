@@ -4,10 +4,11 @@ import { TypeAnimation } from 'react-type-animation';
 import { useSpring, animated } from '@react-spring/web';
 import Particle from "../particles/Particle";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const [isPressed, setIsPressed] = useState(false);
+  const Navigate = useNavigate();
 
   const fadeIn = useSpring({
     from: { opacity: 0, transform: 'translateY(20px)' },
@@ -31,6 +32,10 @@ const Hero = () => {
     scale: 1,
     config: { mass: 1, tension: 300, friction: 20 },
   }));
+
+  const handlePortoClick = () => {
+    Navigate('/projects');
+  };
 
   return (
     <section
@@ -83,8 +88,9 @@ const Hero = () => {
             onMouseDown={() => setIsPressed(true)}
             onMouseUp={() => setIsPressed(false)}
             onMouseLeave={() => setIsPressed(false)}
+            onClick={handlePortoClick}
           >
-            <Link to={"/projects"} className="relative z-10 flex items-center justify-center gap-2">
+            <span className="relative z-10 flex items-center justify-center gap-2">
               View Portfolio
               <svg 
                 className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1" 
@@ -99,7 +105,7 @@ const Hero = () => {
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-            </Link>
+            </span>
             
             {/* Ripple effect overlay */}
             <div className="absolute inset-0 bg-white/20 transform scale-0 transition-transform duration-500 rounded-lg group-hover:scale-100" />
@@ -111,7 +117,7 @@ const Hero = () => {
               onMouseLeave={() => buttonApi.start({ scale: 1 })}
               className="text-gray-300 hover:text-white flex items-center space-x-2 transition-colors duration-300"
             >
-              <ArrowDownCircle size={32} />
+              <ArrowDownCircle size={20} />
               <span className="text-xl">Hire Me</span>
             </animated.a>
           </div>

@@ -1,12 +1,10 @@
 import { ArrowLeftCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import Particle from "../particles/Particle";
 
 const NotFound = () => {
   return (
     <>
-    <Navbar/>
     <div className="relative bg-gradient-to-br from-black to-gray-900 text-white h-screen flex items-center justify-center">
       <Particle />
       <div className="max-w-3xl mx-auto px-4 text-center space-y-8 z-10">
