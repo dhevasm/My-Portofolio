@@ -1,10 +1,18 @@
 [
     {
-      "id": 2,
+      "id": 1,
       "title": "Eschool-Saas",
       "description": "School Management System",
       "image": "/img/projects/eschool.png",
       "demoLink": "https://eschool.ac.id/",
-      "githubLink": "https://eschool.ac.id/"
+      "githubLink": "#"
+    },
+    {
+      "id": 2,
+      "title": "EQuran",
+      "description": "Al-Qur'an Digital & Prayer Time",
+      "image": "/img/projects/equran.png",
+      "demoLink": "https://equran.dhevasm.web.id/",
+      "githubLink": "https://github.com/dhevasm/EQuran"
     }
   ]
