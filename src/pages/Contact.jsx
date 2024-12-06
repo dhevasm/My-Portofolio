@@ -95,7 +95,7 @@ const Contact = () => {
                   from: { opacity: 0, transform: 'translateX(-20px)' },
                   to: { opacity: 1, transform: 'translateX(0)' },
                   delay: 800,
-                })}
+                })} 
               >
                 <FaEnvelope size={24} className="text-gray-400" />
                 <Link to={'https://mail.google.com/mail/u/0/?tf=cm&fs=1&to=dhevapkl123@gmail.com'} target="_blank">dhevapkl123@gmail.com</Link>

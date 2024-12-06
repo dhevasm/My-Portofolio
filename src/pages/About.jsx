@@ -26,21 +26,21 @@ const About = () => {
     delay: 400,
   });
 
-  const [buttonProps, buttonApi] = useSpring(() => ({
-    scale: 1,
-    shadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-    config: { mass: 1, tension: 300, friction: 20 },
-  }));
+  // const [buttonProps, buttonApi] = useSpring(() => ({
+  //   scale: 1,
+  //   shadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+  //   config: { mass: 1, tension: 300, friction: 20 },
+  // }));
 
   // Hover effect untuk tombol
-  const handleButtonHover = (hovering) => {
-    buttonApi.start({
-      scale: hovering ? 1.05 : 1,
-      shadow: hovering 
-        ? '0 20px 25px -5px rgba(0, 0, 0, 0.2)' 
-        : '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-    });
-  };
+  // const handleButtonHover = (hovering) => {
+  //   buttonApi.start({
+  //     scale: hovering ? 1.05 : 1,
+  //     shadow: hovering 
+  //       ? '0 20px 25px -5px rgba(0, 0, 0, 0.2)' 
+  //       : '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+  //   });
+  // };
 
   return (
     <section
