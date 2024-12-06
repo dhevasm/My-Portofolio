@@ -21,7 +21,7 @@ const Projects = () => {
     scale: 1,
     config: { tension: 300, friction: 10 }
   }));
-``
+
   return (
     <section
       id="portfolio"
