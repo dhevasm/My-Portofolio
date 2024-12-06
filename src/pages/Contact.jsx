@@ -129,7 +129,7 @@ const Contact = () => {
                 style={useSpring({
                   from: { opacity: 0, transform: 'translateX(-20px)' },
                   to: { opacity: 1, transform: 'translateX(0)' },
-                  delay: 1000,
+                  delay: 1100,
                 })}
               >
                 <FaInstagram size={24} className="text-gray-400" />
@@ -140,7 +140,7 @@ const Contact = () => {
                 style={useSpring({
                   from: { opacity: 0, transform: 'translateX(-20px)' },
                   to: { opacity: 1, transform: 'translateX(0)' },
-                  delay: 1000,
+                  delay: 1200,
                 })}
               >
                 <FaLinkedin size={24} className="text-gray-400" />
@@ -151,7 +151,7 @@ const Contact = () => {
                 style={useSpring({
                   from: { opacity: 0, transform: 'translateX(-20px)' },
                   to: { opacity: 1, transform: 'translateX(0)' },
-                  delay: 1000,
+                  delay: 1300,
                 })}
               >
                 <FaGithub size={24} className="text-gray-400" />
