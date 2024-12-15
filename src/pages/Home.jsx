@@ -37,6 +37,19 @@ const Home = () => {
     Navigate('/projects');
   };
 
+  const downloadCV = () => {
+    fetch("pdf/cv.pdf").then((response) => {
+        response.blob().then((blob) => {
+        
+            const fileURL = window.URL.createObjectURL(blob);
+            let alink = document.createElement("a");
+            alink.href = fileURL;
+            alink.download = "CV-Ardiansyah Dheva.pdf";
+            alink.click();
+        });
+    });
+};
+
   return (
     <section
       id="home"
@@ -91,7 +104,7 @@ const Home = () => {
             onClick={handlePortoClick}
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
-              View Portfolio
+              Portfolio
               <svg 
                 className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1" 
                 fill="none" 
@@ -107,18 +120,18 @@ const Home = () => {
               </svg>
             </span>
             
-            {/* Ripple effect overlay */}
-            <div className="absolute inset-0 bg-white/20 transform scale-0 transition-transform duration-500 rounded-lg group-hover:scale-100" />
+              {/* Ripple effect overlay */}
+             <div className="absolute inset-0 bg-white/20 transform scale-0 transition-transform duration-500 rounded-lg group-hover:scale-100" />
             </animated.a>
             <animated.a
-              href="https://www.linkedin.com/in/ardiansyah-dheva-3139a82b9/"
+              onClick={downloadCV}
               style={buttonProps}
               onMouseEnter={() => buttonApi.start({ scale: 1.05 })}
               onMouseLeave={() => buttonApi.start({ scale: 1 })}
               className="text-gray-300 hover:text-white flex items-center space-x-2 transition-colors duration-300"
             >
               <ArrowDownCircle size={20} />
-              <span className="text-xl">Hire Me</span>
+              <span className="text-lg">Download CV</span>
             </animated.a>
           </div>
           <animated.div style={socialIconsSpring} className="flex justify-center md:justify-start space-x-8">

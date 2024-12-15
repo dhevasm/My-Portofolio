@@ -72,7 +72,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative bg-gradient-to-br from-black to-gray-900 text-white py-20 md:py-32 h-full"
+      className="relative bg-gradient-to-br from-black to-gray-900 text-white py-20 md:py-32 min-h-screen"
     >
       <Particle/>
       <div className="max-w-6xl mx-auto px-4 z-10">
