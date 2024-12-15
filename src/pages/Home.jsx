@@ -101,7 +101,7 @@ const Home = () => {
             onMouseDown={() => setIsPressed(true)}
             onMouseUp={() => setIsPressed(false)}
             onMouseLeave={() => setIsPressed(false)}
-           // onClick={handlePortoClick}
+            onClick={handlePortoClick}
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
               Portfolio
@@ -124,7 +124,7 @@ const Home = () => {
              <div className="absolute inset-0 bg-white/20 transform scale-0 transition-transform duration-500 rounded-lg group-hover:scale-100" />
             </animated.a>
             <animated.a
-              onClick={downloadCV}
+              //onClick={downloadCV}
               style={buttonProps}
               onMouseEnter={() => buttonApi.start({ scale: 1.05 })}
               onMouseLeave={() => buttonApi.start({ scale: 1 })}
