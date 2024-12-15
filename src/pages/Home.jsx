@@ -101,7 +101,7 @@ const Home = () => {
             onMouseDown={() => setIsPressed(true)}
             onMouseUp={() => setIsPressed(false)}
             onMouseLeave={() => setIsPressed(false)}
-            onClick={handlePortoClick}
+           // onClick={handlePortoClick}
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
               Portfolio
